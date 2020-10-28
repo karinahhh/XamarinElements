@@ -12,17 +12,17 @@ namespace XamarinElements
 	public partial class MainPage : ContentPage
 	{
 		Button btn, btn2, btn3, btn4, btn5, btn6;
-		Button[] bttn = new Button[5];
+		Button[] bttn = new Button[6];
 		public MainPage()
-		{
+		{/*
 			for (int i= 0; i<=5; i++)
 			{
 				bttn[i] = new Button();
 
 			}
-			
+			*/
 
-			/*
+			
 			btn = new Button { Text = "Entry/editor" };
 			btn.Clicked += Btn_Clicked;
 
@@ -81,7 +81,7 @@ namespace XamarinElements
 		private async void Btn_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new Enditor());
-			*/
+			
 		}
 	}
 }

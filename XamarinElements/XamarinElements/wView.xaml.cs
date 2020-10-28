@@ -12,9 +12,23 @@ namespace XamarinElements
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class wView : ContentPage
 	{
-		public wView()
+        WebView webView;
+        public wView()
 		{
-			InitializeComponent();
+            
+            webView = new WebView
+            {
+                Source = new UrlWebViewSource { Url = "https://github.com/karinahhh" },
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
+            StackLayout stack = new StackLayout();
+            stack.Children.Add(webView);
+            Content = stack;
+        }
+
+		private void Button_Clicked(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

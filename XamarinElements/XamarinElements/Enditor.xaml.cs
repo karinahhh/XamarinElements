@@ -14,8 +14,17 @@ namespace XamarinElements
 	{
 		Label lbl;
 		Button btn;
+		Editor edit;
 		public Enditor()
 		{
+			edit = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Blue, CharacterSpacing = 5 };
+
+			StackLayout st = new StackLayout();
+
+			st.Children.Add(edit);
+			Content = st;
+
+			/*
 			lbl = new Label { Text = "Entry" };
 
 			btn = new Button();
@@ -32,6 +41,7 @@ namespace XamarinElements
 		private async void Btn_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new lView());
+		}*/
 		}
 	}
 }
