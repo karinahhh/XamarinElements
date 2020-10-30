@@ -11,7 +11,7 @@ namespace XamarinElements
 {
 	public partial class MainPage : ContentPage
 	{
-		Button btn, btn2, btn3, btn4, btn5, btn6;
+		Button btn, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 		Button[] bttn = new Button[6];
 		public MainPage()
 		{/*
@@ -20,9 +20,24 @@ namespace XamarinElements
 				bttn[i] = new Button();
 
 			}
+			
+			StackLayout stack = new StackLayout();
+			Button button = new Button();
+			var listView1 = new ListView();
+			listView1.ItemsSource = new string[]
+			{
+			  "Entry",
+			  "ListView",
+			  "DataPicker",
+			  "TableView",
+			  "WebView",
+			  "Timer"
+			};
+			stack.Children.Add(listView1);
+			Content = stack;
 			*/
 
-			
+
 			btn = new Button { Text = "Entry/editor" };
 			btn.Clicked += Btn_Clicked;
 
@@ -41,16 +56,26 @@ namespace XamarinElements
 			btn6 = new Button { Text = "Timer" };
 			btn6.Clicked += Btn6_Clicked;
 
-			StackLayout st = new StackLayout();
-			st.Children.Add(btn);
-			st.Children.Add(btn2);
-			st.Children.Add(btn3);
-			st.Children.Add(btn4);
-			st.Children.Add(btn5);
-			st.Children.Add(btn6);
-			Content = st;
+			btn7 = new Button { Text = "Slider" };
+			btn7.Clicked += Btn7_Clicked;
+
+			btn8 = new Button { Text = "Alert" };
+			btn8.Clicked += Btn8_Clicked;
 
 
+			Content = new StackLayout { Children = { btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8 } };
+
+
+		}
+
+		private async void Btn8_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new DispAlert());
+		}
+
+		private async void Btn7_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new Sliderr());
 		}
 
 		private async void Btn6_Clicked(object sender, EventArgs e)
