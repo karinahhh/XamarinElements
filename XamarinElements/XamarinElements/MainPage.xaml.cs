@@ -11,7 +11,7 @@ namespace XamarinElements
 {
 	public partial class MainPage : ContentPage
 	{
-		Button btn, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+		Button btn, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10;
 		Button[] bttn = new Button[6];
 		public MainPage()
 		{/*
@@ -62,10 +62,25 @@ namespace XamarinElements
 			btn8 = new Button { Text = "Alert" };
 			btn8.Clicked += Btn8_Clicked;
 
+			btn9 = new Button { Text = "Text to speech" };
+			btn9.Clicked += Btn9_Clicked;
 
-			Content = new StackLayout { Children = { btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8 } };
+			btn10 = new Button { Text = "Map" };
+			btn10.Clicked += Btn10_Clicked;
+
+			Content = new StackLayout { Children = { btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8, btn9, btn10 } };
 
 
+		}
+
+		private async void Btn10_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new cards());
+		}
+
+		private async void Btn9_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new Speech());
 		}
 
 		private async void Btn8_Clicked(object sender, EventArgs e)

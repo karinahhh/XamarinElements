@@ -18,7 +18,7 @@ namespace XamarinElements
             var listView1 = new ListView();
             listView1.ItemsSource = new string[]
             {
-              "Assad",
+              "red",
               "Sfdsee",
               "Afdfdsfx",
               "Udsfklkdfk",
@@ -26,6 +26,8 @@ namespace XamarinElements
             };
             stack.Children.Add(listView1);
             Content = stack;
+
+			
         }
 	}
 }
